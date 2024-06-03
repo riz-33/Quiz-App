@@ -19,7 +19,7 @@ body{
 }
 
 .quiz>h1 {
-    font-size: 25px;
+    font-size: 35px;
     color: #001e4d;
     font-weight: 600;
     border-bottom: 1px solid #333;
@@ -31,7 +31,7 @@ body{
 }
 
 .qna>h2 {
-    font-size: 18px;
+    font-size: 25px;
     color: #001e4d;
     font-weight: 600;
 }
