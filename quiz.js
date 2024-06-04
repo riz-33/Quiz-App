@@ -1,4 +1,4 @@
-const questions = [
+var questions = [
     {
         question: "Who inaugurated the State Bank of Pakistan?",
         answers: [
@@ -91,3 +91,6 @@ const questions = [
     }
 ];
 
+var question = document.getElementById ("question");
+var answer = document.getElementById ("answer");
+var next = document.getElementById ("next-btn");
