@@ -85,15 +85,22 @@ var questions = [
 // var next = document.getElementById("next-btn");
 
 var index = 0;
-var score =0;
+var score = 0;
 
 function loadQuestion() {
     var quiz = document.getElementById("qna");
     var options = document.getElementsByName("option");
     for (var i = 0; i < options.length; i++) {
         if (options[i].checked) {
-            console.log(options[i].value)
+            if (options[i].value === questions[index - 1].answer) {
+                score++
+            }
         }
+    }
+
+    if (!questions[index]) {
+        console.log("Result " + score/10*100 + "%");
+        return;
     }
 
 
