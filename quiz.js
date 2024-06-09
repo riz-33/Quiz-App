@@ -106,12 +106,12 @@ function loadQuestion() {
 
     quiz.innerHTML = `
     <h2 id="question">${questions[index].question}</h2>
-    <div id="answer" class="answer">
-    <div class="ans-btn"><label><input type="radio" name="option" value="${questions[index].option1}" > ${questions[index].option1}</label></div>
-    <div class="ans-btn"><label><input type="radio" name="option" value="${questions[index].option2}" > ${questions[index].option2}</label></div>
-    <div class="ans-btn"><label><input type="radio" name="option" value="${questions[index].option3}" > ${questions[index].option3}</label></div>
-    <div class="ans-btn"><label><input type="radio" name="option" value="${questions[index].option4}" > ${questions[index].option4}</label></div>  
-    `
+        <div id="answer" class="answer">
+        <div class="ans-btn"><label><input type="radio" name="option" value="${questions[index].option1}" > ${questions[index].option1}</label></div>
+        <div class="ans-btn"><label><input type="radio" name="option" value="${questions[index].option2}" > ${questions[index].option2}</label></div>
+        <div class="ans-btn"><label><input type="radio" name="option" value="${questions[index].option3}" > ${questions[index].option3}</label></div>
+        <div class="ans-btn"><label><input type="radio" name="option" value="${questions[index].option4}" > ${questions[index].option4}</label></div>  
+        </div>`
     index++
 }
 
