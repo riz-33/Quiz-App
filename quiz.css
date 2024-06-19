@@ -52,7 +52,11 @@ body{
 .ans-btn:hover{
     background: #222;
     color: #fff;
+}
 
+.selected{
+    background-color: #222;
+    color: #fff;
 }
 
 .next-btn{
