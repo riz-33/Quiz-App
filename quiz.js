@@ -103,8 +103,9 @@ function loadQuestion() {
     if (!questions[index]) {
         scores.style.display = "block"
         quiz.style.display = "none"
+        
         scores.innerHTML = `
-        <h5> You Scored ${score}/10 </h5>`
+        <h5 class="score-card"> You Scored ${score / 10 * 100}% </h5>`
         nextButton.innerHTML = 'Play Again'
     } else {
         nextButton.innerHTML = 'Next'
