@@ -73,3 +73,7 @@ body{
     /* display: none;    */
     text-align: center;
 }
+
+.scores{
+    display: none;
+}

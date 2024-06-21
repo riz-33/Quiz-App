@@ -90,7 +90,8 @@ var score = 0;
 function loadQuestion() {
     var quiz = document.getElementById("qna");
     var options = document.getElementsByName("option");
-    var score = document.getElementById("score")
+    var scores = document.getElementById("scores")
+    var nextButton = document.getElementById("next-btn")
     for (var i = 0; i < options.length; i++) {
         if (options[i].checked) {
             if (options[i].value === questions[index - 1].answer) {
@@ -100,11 +101,22 @@ function loadQuestion() {
     }
 
     if (!questions[index]) {
-        score.innerHTML = `
-        You Scored ${score}/10`
-        console.log("Result " + score/10*100 + "%");
-        return;
+        scores.style.display = "block"
+        quiz.style.display = "none"
+        scores.innerHTML = `
+        <h5> You Scored ${score}/10 </h5>`
+        nextButton.innerHTML = 'Play Again'
+    } else {
+        nextButton.innerHTML = 'Next'
     }
+
+
+    // if (!questions[index]) {
+    //     score.innerHTML = `
+    //     You Scored ${score}/10`
+    //     console.log("Result " + score / 10 * 100 + "%");
+    //     return;
+    // }
 
 
     quiz.innerHTML = `
@@ -122,10 +134,10 @@ function loadQuestion() {
 function highlightSelected(radio) {
     // Remove the 'selected' class from all labels
     var labels = document.querySelectorAll('.ans-btn');
-    labels.forEach(function(label) {
+    labels.forEach(function (label) {
         label.classList.remove('selected');
     });
-    
+
     // Add the 'selected' class to the label of the checked radio input
     var selectedLabel = document.querySelector('label[for="' + radio.id + '"]');
     if (selectedLabel) {
