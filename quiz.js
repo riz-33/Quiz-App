@@ -103,10 +103,18 @@ function loadQuestion() {
     if (!questions[index]) {
         scores.style.display = "block"
         quiz.style.display = "none"
-        
-        scores.innerHTML = `
-        <h5 class="score-card"> You Scored ${score / 10 * 100}% </h5>`
-        nextButton.innerHTML = 'Play Again'
+        if (score > 5) {
+            scores.innerHTML = `
+            <h4 class="score-card"> Well Played! <br> You Scored ${score / 10 * 100}% </h4>
+            <i class="fa-solid fa-trophy"></i>`
+            nextButton.innerHTML = 'Play Again'
+        }
+        if (score <= 5) {
+            scores.innerHTML = `
+            <h4 class="score-card"> Better Luck Next Time! <br> You Scored ${score / 10 * 100}% </h4>
+            <i class="fa-solid fa-face-frown-open"></i>`
+            nextButton.innerHTML = 'Play Again'
+        }
     } else {
         nextButton.innerHTML = 'Next'
     }

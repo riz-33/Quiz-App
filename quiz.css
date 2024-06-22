@@ -82,6 +82,27 @@ body{
     color: #001e4d;
     font-weight: 600;
     width: 100%;
+}
+
+.fa-solid{
+    color: goldenrod;
+    font-size: 100px;
+    width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 5px 0;
+}
+
+.play-again-btn{
+    background: #001e4d;
+    color: #fff;
+    font-weight: 500;
+    width: 150px;
+    padding: 10px;
+    margin: 0 auto 0;
+    text-align: left;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+    display: none;   
+    text-align: center;
 }
