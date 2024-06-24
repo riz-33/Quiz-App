@@ -81,9 +81,6 @@ var questions = [
     }
 ];
 
-// var answer = document.getElementById("answer");
-// var next = document.getElementById("next-btn");
-
 var index = 0;
 var score = 0;
 
@@ -92,10 +89,13 @@ function loadQuestion() {
     var options = document.getElementsByName("option");
     var scores = document.getElementById("scores")
     var nextButton = document.getElementById("next-btn")
+    var playAgainQuiz = document.getElementById("play-again-btn")
+    
     for (var i = 0; i < options.length; i++) {
         if (options[i].checked) {
             if (options[i].value === questions[index - 1].answer) {
                 score++
+                console.log(score)
             }
         }
     }
@@ -103,17 +103,23 @@ function loadQuestion() {
     if (!questions[index]) {
         scores.style.display = "block"
         quiz.style.display = "none"
+        nextButton.style.display = "none"
+        playAgainQuiz.style.display = "block"
+
         if (score > 5) {
             scores.innerHTML = `
             <h4 class="score-card"> Well Played! <br> You Scored ${score / 10 * 100}% </h4>
             <i class="fa-solid fa-trophy"></i>`
-            nextButton.innerHTML = 'Play Again'
+            // nextButton.innerHTML = 'Play Again'
+            // function playAgain() {
+                // location.reload
+            // }            
         }
         if (score <= 5) {
             scores.innerHTML = `
-            <h4 class="score-card"> Better Luck Next Time! <br> You Scored ${score / 10 * 100}% </h4>
+            <h4 class="score-card"> You Scored ${score / 10 * 100}% <br> Better Luck Next Time! </h4>
             <i class="fa-solid fa-face-frown-open"></i>`
-            nextButton.innerHTML = 'Play Again'
+            // nextButton.innerHTML = 'Play Again'
         }
     } else {
         nextButton.innerHTML = 'Next'
@@ -154,5 +160,10 @@ function highlightSelected(radio) {
     }
 }
 
+loadQuestion();
 
-loadQuestion()
+function refresh() {    
+    setTimeout(function () {
+        location.reload()
+    }, 1000);
+}
